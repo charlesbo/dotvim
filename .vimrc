@@ -594,6 +594,7 @@ let g:syntastic_mode_map = {
 " For C and C++, use libclang, Luke.
 "
 let g:clang_use_library = 1
+let g:clang_debug = 1
 
 " (for CUDA .cu, too)
 au BufNewFile,BufRead *.c,*.cc,*.cpp,*.h,*.cu call SetupCandCPPenviron()
@@ -609,6 +610,7 @@ function! SetupCandCPPenviron()
     " If I ever need to generate tags on the fly, I uncomment this:
     " noremap <C-F11> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
     set tags+=/usr/include/tags
+    set tags+=~/local/include/tags
 
     "
     " Toggle TagList window with F8
